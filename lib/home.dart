@@ -59,10 +59,10 @@ class _HomeState extends State<Home> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    CategoriaHome("images/cha.png","Chás"),
-                    CategoriaHome("images/cha.png","Cafés"),
-                    CategoriaHome("images/cha.png","Acessórios"),
-                    CategoriaHome("images/cha.png","Mais Vendidos"),
+                    CategoriaHome("assets/images/cha.png","Chás"),
+                    CategoriaHome("assets/images/cha.png","Cafés"),
+                    CategoriaHome("assets/images/cha.png","Acessórios"),
+                    CategoriaHome("assets/images/cha.png","Mais Vendidos"),
 
 
                   ],
@@ -85,7 +85,10 @@ class _HomeState extends State<Home> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          Cards("assets/images/cha.png", "chá verde", "250,00", LoginPage()),
+                          Cards("https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_1280.jpg", "chá verde", "250,00", LoginPage()),
+                          Cards("https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_1280.jpg", "chá branco", "400,00", LoginPage()),
+                          Cards("https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_1280.jpg", "chá branco", "400,00", LoginPage()),
+
                           // no 'LoginPAge ()' precisa colocar o hiperlink da página!!
 
 
