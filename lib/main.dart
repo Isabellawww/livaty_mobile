@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'LivaTy/carrinho.dart';
-import 'home.dart';
-import 'perfil/cadastro.dart';
+import 'package:flutter_application_livaty/LivaTy/carrinho.dart';
+import 'package:flutter_application_livaty/home.dart';
+import 'package:flutter_application_livaty/perfil/cadastro.dart';
 
 void main() {
   runApp(MyApp());

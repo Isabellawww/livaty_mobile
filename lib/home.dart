@@ -1,12 +1,10 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import 'LivaTy/cards.dart';
-import 'appbar.dart';
-import 'perfil/cadastro.dart';
-import 'perfil/categoria.dart';
-import 'perfil/gaveta.dart';
-
+import 'package:flutter_application_livaty/LivaTy/cards.dart';
+import 'package:flutter_application_livaty/appbar.dart';
+import 'package:flutter_application_livaty/perfil/cadastro.dart';
+import 'package:flutter_application_livaty/perfil/categoria.dart';
+import 'package:flutter_application_livaty/perfil/gaveta.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -59,10 +57,12 @@ class _HomeState extends State<Home> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    CategoriaHome("assets/images/cha.png","Chás"),
-                    CategoriaHome("assets/images/cha.png","Cafés"),
-                    CategoriaHome("assets/images/cha.png","Acessórios"),
-                    CategoriaHome("assets/images/cha.png","Mais Vendidos"),
+                    CategoriaHome("images/chaverde_categoria.png","Chás"),
+                    CategoriaHome("images/cafe_categoria.png","Cafés"),
+                    //CategoriaHome("images/cha.png","Acessórios"),
+                    CategoriaHome("images/incensos_categoria.png","Incensos"),
+                    
+                    CategoriaHome("images/erva_maisvendidos.png","Mais Vendidos"),
 
 
                   ],
@@ -85,10 +85,8 @@ class _HomeState extends State<Home> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          Cards("https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_1280.jpg", "chá verde", "250,00", LoginPage()),
-                          Cards("https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_1280.jpg", "chá branco", "400,00", LoginPage()),
-                          Cards("https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_1280.jpg", "chá branco", "400,00", LoginPage()),
-
+                          
+                          Cards("assets/images/chaverde_categoria.png", "chá verde", "250,00", LoginPage()),
                           // no 'LoginPAge ()' precisa colocar o hiperlink da página!!
 
 

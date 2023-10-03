@@ -18,7 +18,7 @@ class Cards extends StatelessWidget {
         width: 200,
         height: 300,
         margin: const EdgeInsets.symmetric(horizontal: 7.5),
-        decoration: BoxDecoration(border: Border.all(color: Color(0x4BA76B12))),
+        decoration: BoxDecoration(border: Border.all(color: Color.fromARGB(74, 112, 112, 112))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,9 +32,9 @@ class Cards extends StatelessWidget {
             Text(
               preco,
               style: const TextStyle(
-                  fontSize: 25,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 28, 134, 31)),
+                  color: Color.fromARGB(255, 0, 0, 0)),
             )
           ],
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../appbar.dart';
+import 'package:flutter_application_livaty/appbar.dart';
 
 void main() {
   runApp(const LivaTyPage());
