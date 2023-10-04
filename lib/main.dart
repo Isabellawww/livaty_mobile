@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_livaty/LivaTy/carrinho.dart';
 import 'package:flutter_application_livaty/home.dart';
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255) ,
         appBarTheme: AppBarTheme(
           color: Colors.black,
           titleSpacing:
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
         //'/barraPesq': (context) => const MyPesq(),
         '/shopping': (context) => const LivaTyPage(),
         '/perfil': (context) => LoginPage(),
-        '/faq': (context) => MyFaq(),
+        '/faq': (context) => FAQ(),
       },
     );
   }

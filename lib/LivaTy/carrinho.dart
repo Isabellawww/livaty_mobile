@@ -11,7 +11,7 @@ class LivaTyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NavBar(context, title: "LivaTy", centerTitle: true, backgroundColor: Colors.green,),
+      appBar: NavBar(context, title: "Carrinho", centerTitle: true, backgroundColor: Colors.green,),
       body: Center(
         child: const Text(
           'Carrinho vazio 😢',

@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             CircleAvatar(
               radius: 35.0,
-              backgroundColor: Color.fromARGB(255, 6, 46, 14),
+              backgroundColor: Color.fromARGB(255, 131, 167, 131),
               child: Icon(
                 Icons.person,
                 color: Colors.black,
@@ -132,6 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                 }
               },
               style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
                 
                 padding: EdgeInsets.symmetric(
                     horizontal: 40, vertical: 20), // Ajuste o tamanho do botão

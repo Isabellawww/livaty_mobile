@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(FAQ());
 
-class MyApp extends StatelessWidget {
+class FAQ extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('FAQ'),
@@ -19,22 +20,22 @@ class MyApp extends StatelessWidget {
 class FAQScreen extends StatelessWidget {
   final List<FAQItem> faqItems = [
     FAQItem(
-      question: 'O que é o Flutter?',
+      question: 'Como comprar?',
       answer:
-          'Flutter é um framework de interface do usuário de código aberto criado pelo Google. '
-          'Ele permite o desenvolvimento de aplicativos para dispositivos móveis, web e desktop a partir de um único código-base.',
+          'Ao clicar no produto de interesse, ele mostrará um botão para adicionar ao carrinho. '
+          'Quando for deslocado ao carrinho, clique no ícone Carrinho, e ele mostrará a opção de compra.',
     ),
     FAQItem(
-      question: 'Como começar a usar o Flutter?',
+      question: 'Quanto é o frete?',
       answer:
-          'Para começar a usar o Flutter, você precisa instalar o Flutter SDK e configurar seu ambiente de desenvolvimento. '
-          'Depois de configurar, você pode criar um novo projeto Flutter e começar a escrever código para seu aplicativo.',
+          'Isso irá depender de qual região o comprador é. '
+          'Varia de 5,00 a 25,00.',
     ),
     FAQItem(
-      question: 'O Flutter é gratuito?',
+      question: 'O produto vem tudo embaladinho?',
       answer:
-          'Sim, o Flutter é um framework de código aberto e gratuito, desenvolvido pelo Google. '
-          'Você pode usá-lo para desenvolver aplicativos sem nenhum custo.',
+          'Sim, todo item é levado para o correio de forma protegida, com bolhas de ar para preservar o item. '
+          'A embalagem é de papelão firme, no qual suporta uma boa viagem no veículo usado.',
     ),
   ];
 
