@@ -10,8 +10,8 @@ class Gaveta extends StatefulWidget {
 class _GavetaState extends State<Gaveta> {
   @override
   Widget build(BuildContext context) {
-    return NavigationDrawer (children: [
-        Padding(
+    return NavigationDrawer(children: [
+      Padding(
           padding: EdgeInsets.all(5),
           child: Column(
             children: [
@@ -31,16 +31,13 @@ class _GavetaState extends State<Gaveta> {
               ),
               ListTile(
                 leading: Icon(Icons.question_mark),
-                title: Text('Perfil'),
+                title: Text('Perguntas Frequentes'),
                 onTap: () {
-                  Navigator.pushNamed(context, '/perfil');
+                  Navigator.pushNamed(context, '/faq');
                 },
               ),
-              
             ],
-          )
-
-        )
-      ]);
+          ))
+    ]);
   }
 }
