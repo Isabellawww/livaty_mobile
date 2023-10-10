@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
       title: 'LivaTy',
 
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255) ,
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 255, 255, 255)),
+        scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255) ,
         appBarTheme: AppBarTheme(
-          color: Colors.black,
+          color: Color.fromARGB(255, 0, 0, 0),
           titleSpacing:
               10, // Defina o valor de titleSpacing para ajustar o espaçamento
         ),

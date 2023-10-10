@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_livaty/appbar.dart';
 
+
+
 void main() {
   runApp(const LivaTyPage());
+  
+}
+
+class Cart{
+
 }
 
 class LivaTyPage extends StatelessWidget {
@@ -11,6 +18,7 @@ class LivaTyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: NavBar(context, title: "Carrinho", centerTitle: true, backgroundColor: Colors.green,),
       body: Center(
         child: const Text(

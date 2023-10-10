@@ -11,6 +11,8 @@ class ChaVerde extends StatefulWidget {
   State<ChaVerde> createState() => _ChaVerdeState();
 }
 
+
+
 class _ChaVerdeState extends State<ChaVerde> {
   List<String> image = [
     'https://th.bing.com/th/id/OIP.Y7LmVSY4bitSAlggiiSDnQHaE8?pid=ImgDet&rs=1',
@@ -24,15 +26,16 @@ class _ChaVerdeState extends State<ChaVerde> {
         appBar: NavBar(context, title: "Produto", centerTitle: true, backgroundColor: Colors.green,),
         body: SingleChildScrollView(
       child: Container(
-        decoration: BoxDecoration(color: const Color.fromARGB(255, 0, 0, 0)),
+        decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
               child:
-             Text("Chá Verde", style: TextStyle(fontSize: 25, color: Colors.white),
+             Text("Chá Verde", style: TextStyle(fontSize: 25, color: const Color.fromARGB(255, 0, 0, 0)),
             ),
             ),
+            
             CarouselSlider(
               options: CarouselOptions(height: 325.0, viewportFraction: 1),
               items: [0, 1, 2].map((i) {
@@ -40,7 +43,7 @@ class _ChaVerdeState extends State<ChaVerde> {
                   builder: (BuildContext context) {
                     return Container(
                         width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(color: const Color.fromARGB(255, 0, 0, 0)),
+                        decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
                         child: Image(image: NetworkImage(image[i])));
                 },
                 );
@@ -58,9 +61,18 @@ class _ChaVerdeState extends State<ChaVerde> {
                       Preview(
                         "https://th.bing.com/th/id/OIP.HSTCJ4vgI1Fcbd-xpS__mgHaE8?pid=ImgDet&rs=1"),
                     ],
-        ),),],
         ),
+        ),
+        Container(
+          child: ElevatedButton(child: Text('Adicionar ao Carrinho'), 
+          style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 106, 150, 108)),
+          onPressed:(){},
+          ),
+        )
+        ],
+        
       ),
+    )
     ));
   }
 }

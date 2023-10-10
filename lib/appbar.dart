@@ -4,7 +4,7 @@ class NavBar extends AppBar {
   NavBar(BuildContext context, {String? title, bool? centerTitle, super.key, required Color backgroundColor})
       : super(
           title: title != null ? Text(title) : null,
-          backgroundColor: Colors.black, // Definindo a cor preta
+          backgroundColor: Color.fromARGB(255, 255, 255, 255), // Definindo a cor preta
           centerTitle: centerTitle,
           actions: [
             CustomSearchBar(), // Substitua o ícone de pesquisa pelo campo de pesquisa
@@ -12,7 +12,7 @@ class NavBar extends AppBar {
               onPressed: (() {
                 Navigator.pushNamed(context, '/shopping');
               }),
-              icon: const Icon(Icons.shopping_cart),
+              icon: const Icon(Icons.shopping_cart),  
             ),
             IconButton(
               onPressed: (() {

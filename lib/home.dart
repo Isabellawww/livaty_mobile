@@ -9,6 +9,7 @@ import 'package:flutter_application_livaty/produtos/cafe_expresso.dart';
 import 'package:flutter_application_livaty/produtos/incenso_canela.dart';
 import 'package:flutter_application_livaty/produtos/produto_chaverde.dart';
 
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -32,7 +33,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: NavBar(
         context,
-        title: "LivaTy", backgroundColor: Color.fromARGB(255, 0, 0, 0),
+        title: "LivaTy", backgroundColor: Color.fromARGB(255, 255, 255, 255),
       ),
       drawer: Gaveta(),
       body: SingleChildScrollView(
