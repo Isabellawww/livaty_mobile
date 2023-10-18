@@ -1,5 +1,3 @@
-
-
 class MyProduto {
 
   String _nomeProduto;

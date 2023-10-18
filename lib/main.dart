@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': ((context) => const Home()),
         //'/barraPesq': (context) => const MyPesq(),
-        '/shopping': (context) => const LivaTyPage(),
+        '/shopping': (context) => LivaTyPage(),
         '/perfil': (context) => LoginPage(),
         '/faq': (context) => FAQ(),
       },

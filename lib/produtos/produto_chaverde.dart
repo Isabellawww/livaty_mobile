@@ -1,4 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:flutter_application_livaty/LivaTy/carrinhorepository.dart';
+import 'package:flutter_application_livaty/LivaTy/produto.dart';
 import 'package:flutter_application_livaty/appbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +13,6 @@ class ChaVerde extends StatefulWidget {
   State<ChaVerde> createState() => _ChaVerdeState();
 }
 
-
-
 class _ChaVerdeState extends State<ChaVerde> {
   List<String> image = [
     'https://th.bing.com/th/id/OIP.Y7LmVSY4bitSAlggiiSDnQHaE8?pid=ImgDet&rs=1',
@@ -23,33 +23,44 @@ class _ChaVerdeState extends State<ChaVerde> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: NavBar(context, title: "Produto", centerTitle: true, backgroundColor: Colors.green,),
-        body: SingleChildScrollView(
-      child: Container(
-        decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child:
-             Text("Chá Verde", style: TextStyle(fontSize: 25, color: const Color.fromARGB(255, 0, 0, 0)),
-            ),
-            ),
-            
-            CarouselSlider(
-              options: CarouselOptions(height: 325.0, viewportFraction: 1),
-              items: [0, 1, 2].map((i) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
-                        child: Image(image: NetworkImage(image[i])));
-                },
-                );
-              }).toList(),
-            ),
-            Container(
+        appBar: NavBar(
+          context,
+          title: "Produto",
+          backgroundColor: Colors.green,
+          centerTitle: true,
+        ),
+        body: Container(
+          decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    Text("Chá Verde",
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: const Color.fromARGB(255, 0, 0, 0))),
+                    CarouselSlider(
+                      options:
+                          CarouselOptions(height: 325.0, viewportFraction: 1),
+                      items: [0, 1, 2].map((i) {
+                        return Builder(
+                          builder: (BuildContext context) {
+                            return Container(
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 255, 255, 255)),
+                                child: Image(image: NetworkImage(image[i])));
+                          },
+                        );
+                      }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+
+              /*Container(
                   height: 100,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
@@ -62,17 +73,19 @@ class _ChaVerdeState extends State<ChaVerde> {
                         "https://th.bing.com/th/id/OIP.HSTCJ4vgI1Fcbd-xpS__mgHaE8?pid=ImgDet&rs=1"),
                     ],
         ),
-        ),
-        Container(
-          child: ElevatedButton(child: Text('Adicionar ao Carrinho'), 
-          style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 106, 150, 108)),
-          onPressed:(){},
+        ),*/
+              Container(
+                child: ElevatedButton(
+                  child: Text('Adicionar ao Carrinho'),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 106, 150, 108)),
+                  onPressed: () {
+                    Carrinho.adicionarProduto(MyProduto("Chá Verde", 90));
+                  },
+                ),
+              )
+            ],
           ),
-        )
-        ],
-        
-      ),
-    )
-    ));
+        ));
   }
 }

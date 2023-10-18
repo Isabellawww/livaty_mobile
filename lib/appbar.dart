@@ -4,7 +4,10 @@ class NavBar extends AppBar {
   NavBar(BuildContext context, {String? title, bool? centerTitle, super.key, required Color backgroundColor})
       : super(
           title: title != null ? Text(title) : null,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255), // Definindo a cor preta
+          
+          //title: GestureDetector(child: Text("LivaTy"),onTap: (){Navigator.pop(context);},),
+
+          backgroundColor: Color.fromARGB(255, 0, 0, 0), // Definindo a cor preta
           centerTitle: centerTitle,
           actions: [
             CustomSearchBar(), // Substitua o ícone de pesquisa pelo campo de pesquisa

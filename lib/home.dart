@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: NavBar(
         context,
-        title: "LivaTy", backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        title: "LivaTy", backgroundColor: Color.fromARGB(255, 0, 0, 0),
       ),
       drawer: Gaveta(),
       body: SingleChildScrollView(

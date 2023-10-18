@@ -21,7 +21,7 @@ class _Cafe_expressoState extends State<Cafe_expresso> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            appBar: NavBar(context, title: "Produto", centerTitle: true, backgroundColor: Colors.green,),
+            appBar: NavBar(context, title: "Produto", centerTitle: true, backgroundColor: const Color.fromARGB(255, 0, 0, 0),),
         body: SingleChildScrollView(
       child: Container(
         decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
@@ -40,7 +40,7 @@ class _Cafe_expressoState extends State<Cafe_expresso> {
                   builder: (BuildContext context) {
                     return Container(
                         width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(color: const Color.fromARGB(255, 0, 0, 0)),
+                        decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
                         child: Image(image: NetworkImage(image[i])));
                 },
                 );
