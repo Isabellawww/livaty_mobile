@@ -4,7 +4,7 @@ import 'package:flutter_application_livaty/LivaTy/produto.dart';
 import 'package:flutter_application_livaty/appbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_livaty/produtos/preview.dart';
+
 
 class ChaVerde extends StatefulWidget {
   const ChaVerde({super.key});
@@ -22,6 +22,8 @@ class _ChaVerdeState extends State<ChaVerde> {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
         appBar: NavBar(
           context,
@@ -32,33 +34,54 @@ class _ChaVerdeState extends State<ChaVerde> {
         body: Container(
           decoration: BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Text("Chá Verde",
-                        style: TextStyle(
-                            fontSize: 25,
-                            color: const Color.fromARGB(255, 0, 0, 0))),
-                    CarouselSlider(
-                      options:
-                          CarouselOptions(height: 325.0, viewportFraction: 1),
-                      items: [0, 1, 2].map((i) {
-                        return Builder(
-                          builder: (BuildContext context) {
-                            return Container(
-                                width: MediaQuery.of(context).size.width,
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 255, 255, 255)),
-                                child: Image(image: NetworkImage(image[i])));
-                          },
-                        );
-                      }).toList(),
-                    ),
-                  ],
+              Center(
+                child: Expanded(
+                   child: Column(
+                    children: [
+                      CarouselSlider(
+                       
+                        options:
+                            CarouselOptions(height: 325.0, viewportFraction: 1),
+                        items: [0, 1, 2].map((i) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 255, 255, 255)),
+                                  child: Center(child: Image(image: NetworkImage(image[i]))));
+                            },
+                          );
+                        }).toList(),
+                      ),
+                
+                    ],
+                  ),
                 ),
               ),
+                      Row(
+                        
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [ 
+
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              child: RichText(text: TextSpan(children: [
+                                TextSpan(text: 'R\$'),
+                                TextSpan(text: '100', style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 106, 150, 108))),
+                                TextSpan(text: ',00'),
+                                TextSpan(text: ' '),
+                                TextSpan(text: '120,00', style: TextStyle(decoration: TextDecoration.lineThrough))
+                                
+                              ]
+                              )
+                              )
+                            ),
+                          ),
+                        ],
+                      ),
 
               /*Container(
                   height: 100,
@@ -75,12 +98,16 @@ class _ChaVerdeState extends State<ChaVerde> {
         ),
         ),*/
               Container(
+                width: 1000,
                 child: ElevatedButton(
-                  child: Text('Adicionar ao Carrinho'),
+                  child: Icon(Icons.shopping_cart),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 106, 150, 108)),
                   onPressed: () {
                     Carrinho.adicionarProduto(MyProduto("Chá Verde", 90));
+                    showDialog(context: context, builder: (BuildContext context) {
+                      return AlertDialog(title: Icon(Icons.check_circle, color: Color.fromARGB(255, 106, 150, 108), size: 50,), content: Text('Produto adicionado ao carrinho com sucesso'),);
+                    });
                   },
                 ),
               )

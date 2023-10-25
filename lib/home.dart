@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_livaty/LivaTy/cards.dart';
 import 'package:flutter_application_livaty/appbar.dart';
-import 'package:flutter_application_livaty/perfil/cadastro.dart';
 import 'package:flutter_application_livaty/perfil/categoria.dart';
 import 'package:flutter_application_livaty/perfil/gaveta.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -94,7 +93,6 @@ class _HomeState extends State<Home> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          
                           Cards("assets/images/chaverde_categoria.png", "chá verde", "250,00", ChaVerde()),
                           // no 'LoginPAge ()' precisa colocar o hiperlink da página!!
                           Cards("assets/images/cafe_categoria.png", "Pó Café Expresso", "12,00", Cafe_expresso()),

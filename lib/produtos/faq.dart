@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_livaty/appbar.dart';
 
 void main() => runApp(FAQ());
 
 class FAQ extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('FAQ'),
+    return Scaffold(
+      
+        appBar: NavBar(
+          context,
+          title: "FAQ",
+          backgroundColor: Colors.green,
+          centerTitle: true,
         ),
         body: FAQScreen(),
-      ),
-    );
+      );
+    
   }
 }
 
