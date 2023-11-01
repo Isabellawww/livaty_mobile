@@ -37,6 +37,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  mysql1: ^0.20.0
 
 dev_dependencies:
   flutter_test:
@@ -62,9 +63,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/chaverde_categoria.png
     - assets/images/erva_maisvendidos.png
     - assets/images/incensos_categoria.png
+    - assets/images/cha_verde.png
 
 
     
