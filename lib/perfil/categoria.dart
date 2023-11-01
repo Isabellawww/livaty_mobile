@@ -1,26 +1,36 @@
 import 'package:flutter/material.dart';
 
 class CategoriaHome extends StatelessWidget {
-  CategoriaHome(this.image, this.nome, {super.key});
+  CategoriaHome(this.image, this.nome, this.estilo, {Key? key})
+      : super(key: key);
+
   final String image;
   final String nome;
+  final String estilo;
 
   @override
   Widget build(BuildContext context) {
+    double circleAvatarSize = 55;
+
+    if (estilo == 'large') {
+      circleAvatarSize = 80;
+    } else if (estilo == 'medium') {
+      circleAvatarSize = 60;
+    }
+
     return GestureDetector(
       onTap: () {
-        //Navigator.push(context, MaterialPageRoute(builder: (context) => "coloque a sua rota aqui!!!!!!"   ));
+        // Navegue para a rota desejada aqui.
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => SuaRota()));
       },
       child: Container(
-        
-        margin: EdgeInsets.symmetric(horizontal: 4),
-        
+        margin: EdgeInsets.symmetric(horizontal: 3),
         child: Column(
-          
           children: [
             CircleAvatar(
+              backgroundColor: Colors.white,
               backgroundImage: AssetImage(image),
-              radius: 55, 
+              radius: circleAvatarSize,
             ),
             Text(
               nome,

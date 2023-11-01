@@ -3,8 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_livaty/LivaTy/carrinho.dart';
 import 'package:flutter_application_livaty/home.dart';
-import 'package:flutter_application_livaty/perfil/cadastro.dart';
 import 'package:flutter_application_livaty/produtos/faq.dart';
+
+import 'perfil/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
       title: 'LivaTy',
 
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 255, 255, 255)),
-        scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255) ,
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 255, 255, 255)),
+        scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBarTheme: AppBarTheme(
           color: Color.fromARGB(255, 0, 0, 0),
           titleSpacing:

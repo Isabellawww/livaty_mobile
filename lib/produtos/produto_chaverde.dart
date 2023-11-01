@@ -64,14 +64,15 @@ class _ChaVerdeState extends State<ChaVerde> {
                   child: Container(
                       child: RichText(
                           text: TextSpan(children: [
-                    TextSpan(text: 'R\$'),
+                    TextSpan(text: 'R\$',
+                    style: TextStyle(color: Colors.black)),
                     TextSpan(
                         text: '100',
                         style: TextStyle(
                             fontSize: 30,
                             color: Color.fromARGB(255, 106, 150, 108))),
-                    TextSpan(text: ',00'),
-                    TextSpan(text: ' '),
+                    TextSpan(text: ',00', style: TextStyle(color: Colors.black)),
+                    TextSpan(text: ' ', style: TextStyle(color: Colors.black)),
                     TextSpan(
                         text: '120,00',
                         style:
