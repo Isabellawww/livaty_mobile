@@ -12,11 +12,7 @@ class CategoriaHome extends StatelessWidget {
   Widget build(BuildContext context) {
     double circleAvatarSize = 55;
 
-    if (estilo == 'large') {
-      circleAvatarSize = 80;
-    } else if (estilo == 'medium') {
-      circleAvatarSize = 60;
-    }
+    
 
     return GestureDetector(
       onTap: () {

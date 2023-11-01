@@ -16,7 +16,7 @@ class Incenso_Canela extends StatefulWidget {
 
 class _Incenso_CanelaState extends State<Incenso_Canela> {
   List<String> image = [
-    'assets/images/incensos_categoria.png',
+    'assets/images/incensoss.png',
     'https://http2.mlstatic.com/D_NQ_NP_638518-MLB32731720646_112019-O.webp',
     'https://http2.mlstatic.com/D_NQ_NP_743725-MLU69846539079_062023-O.webp',
   ];

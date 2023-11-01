@@ -42,15 +42,8 @@ class _CadastroPageState extends State<CadastroPage> {
   final _nomeController = TextEditingController();
   final _emailController = TextEditingController();
   final _senhaController = TextEditingController();
-  final _telefoneController = TextEditingController();
-  final _ruaController = TextEditingController();
-  final _cidadeController = TextEditingController();
-  final _cepController = TextEditingController();
-  final _numeroController = TextEditingController();
-  final _bairroController = TextEditingController();
-  final _estadoController = TextEditingController();
   final _dataNascimentoController = TextEditingController();
-  final _usuarioRepository = UsuarioRepository();
+  //final _usuarioRepository = UsuarioRepository();
   var db = BD();
 
   @override
@@ -77,163 +70,93 @@ class _CadastroPageState extends State<CadastroPage> {
                   semanticLabel: 'Text',
                 ),
               ),
-        
-              TextFormField(
-                controller: _cpfContrioller,
-                decoration: const InputDecoration(labelText: 'CPF'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o CPF';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _nomeController,
-                decoration: const InputDecoration(labelText: 'Nome'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o seu nome';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _emailController,
-                decoration: const InputDecoration(labelText: 'Email'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o Email';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _senhaController,
-                decoration: const InputDecoration(labelText: 'Senha'),
-                obscureText: true,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira a senha';
-                  } else if (value.length < 3) {
-                    return 'A senha deve ter pelo menos 3 caracteres (use caracteres especiais para mais segurança!)';
-                  }
-                  return null;
-                },
-              ),
-        
-        
-              TextFormField(
-                decoration: const InputDecoration(labelText: 'Confirmar Senha'),
-                obscureText: true,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, confirme a senha';
-                  } else if (value != _senhaController.text) {
-                    return 'As senhas não coincidem';
-                  }
-                  return null;
-                },
-              ),
-        
-              TextFormField(
-                controller: _telefoneController,
-                decoration: const InputDecoration(labelText: 'Telefone'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o Telefone';
-                  }
-                  return null;
-                },
-              ),
-        
-              TextFormField(
-                controller: _ruaController,
-                decoration: const InputDecoration(labelText: 'Rua'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira a Rua';
-                  }
-                  return null;
-                },
-              ),
-        
-              TextFormField(
-                controller: _cidadeController,
-                decoration: const InputDecoration(labelText: 'Cidade'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira a Cidade';
-                  }
-                  return null;
-                },
-              ),
-        
-              TextFormField(
-                controller: _cepController,
-                decoration: const InputDecoration(labelText: 'CEP'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o seu CEP';
-                  }
-                  return null;
-                },
-              ),
-        
-              TextFormField(
-                controller: _numeroController,
-                decoration: const InputDecoration(labelText: 'Numero'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o seu Numero';
-                  }
-                  return null;
-                },
-              ),
-        
-              TextFormField(
-                controller: _bairroController,
-                decoration: const InputDecoration(labelText: 'Bairro'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o Bairro';
-                  }
-                  return null;
-                },
-              ),
-        
-              TextFormField(
-                controller: _estadoController,
-                decoration: const InputDecoration(labelText: 'Estado'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira o Estado';
-                  }
-                  return null;
-                },
-              ),
-        
-              TextFormField(
-                controller: _dataNascimentoController,
-                decoration: const InputDecoration(labelText: 'Data de Nascimento'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira a sua data de nascimento';
-                  }
-                  return null;
-                },
-              ),
-        
-            
-              SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                onPressed: () async {
-                  db.getConnection().then((conn){
-                  conn.query('insert into cliente (cpf, nome, email, senha, telefone, rua, cidade, cep, numero, bairro, estado, dataNascimento) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [_cpfContrioller.text, _nomeController.text, _emailController.text, _senhaController.text, _telefoneController.text, _ruaController.text, _cidadeController.text, _cepController.text, _numeroController.text, _bairroController.text, _estadoController.text, DateTime.now()]);
-                  });
-                  /*if (_formKey.currentState!.validate()) {
+              Form(
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: _cpfContrioller,
+                      decoration: const InputDecoration(labelText: 'CPF'),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, insira o CPF';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      controller: _nomeController,
+                      decoration: const InputDecoration(labelText: 'Nome'),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, insira o seu nome';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      controller: _emailController,
+                      decoration: const InputDecoration(labelText: 'Email'),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, insira o Email';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      controller: _senhaController,
+                      decoration: const InputDecoration(labelText: 'Senha'),
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, insira a senha';
+                        } else if (value.length < 3) {
+                          return 'A senha deve ter pelo menos 3 caracteres (use caracteres especiais para mais segurança!)';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration:
+                          const InputDecoration(labelText: 'Confirmar Senha'),
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, confirme a senha';
+                        } else if (value != _senhaController.text) {
+                          return 'As senhas não coincidem';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      controller: _dataNascimentoController,
+                      decoration: const InputDecoration(
+                          labelText: 'Data de Nascimento'),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, insira a sua data de nascimento';
+                        }
+                        return null;
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () async {
+                        db.getConnection().then((conn) async {
+                          await conn.query(
+                              'insert into cliente (cpf, nome, email, senha, dataNascimento) values(?, ?, ?, ?, ?)',
+                              [
+                                _cpfContrioller.text,
+                                _nomeController.text,
+                                _emailController.text,
+                                _senhaController.text,
+                                DateTime.utc(2023 - 11 - 25)
+                              ]);
+                        });
+                        /*if (_formKey.currentState!.validate()) {
                     if (_usuarioRepository.validarUsuario(
                         _emailController.text, _senhaController.text)) {
                       Navigator.push(
@@ -265,34 +188,22 @@ class _CadastroPageState extends State<CadastroPage> {
                       );
                     }
                   }*/
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 40, vertical: 20), // Ajuste o tamanho do botão
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 40,
+                            vertical: 20), // Ajuste o tamanho do botão
+                      ),
+                      child: const Text('Cadastrar'),
+                    ),
+                  ],
                 ),
-                child: const Text('Cadastrar'),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: const Center(
-        child: Text('Bem-vinde à Home Page!'),
       ),
     );
   }

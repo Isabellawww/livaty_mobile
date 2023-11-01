@@ -18,10 +18,10 @@ class Cards extends StatelessWidget {
             child: Container(
         width: 200,
         height: 300,
-        margin: const EdgeInsets.symmetric(horizontal: 7.5),
-        decoration: BoxDecoration(border: Border.all(color: Color.fromARGB(255, 65, 64, 64))),
+        margin: const EdgeInsets.symmetric(horizontal: 10.0),
+        decoration: BoxDecoration(border: Border.all(color: Color.fromARGB(255, 13, 34, 1))),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image(
               image: NetworkImage(image),

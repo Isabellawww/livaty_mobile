@@ -33,6 +33,7 @@ class _HomeState extends State<Home> {
       drawer: Gaveta(),
       body: SingleChildScrollView(
           child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             height: 0,
@@ -56,8 +57,8 @@ class _HomeState extends State<Home> {
           ),
           Container(
             height: 180,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CategoriaHome("images/cha_verdee.png", "Chás", "medium"),
                 CategoriaHome("images/cafee_e.png", "Cafés", "large"),
@@ -85,13 +86,30 @@ class _HomeState extends State<Home> {
                       Cards("assets/images/cha_verdee.png", "chá verde", "2,00",
                           ChaVerde()),
                       // no 'LoginPAge ()' precisa colocar o hiperlink da página!!
-                      Cards("assets/images/cafe_categoria.png", "Café Expresso",
+                      Cards("assets/images/cafee_e.png", "Café Expresso",
                           "16,00", Cafe_expresso()),
                       Cards("assets/images/incensoss.png",
                           "Kit de Incenso Natural", "90,00", Incenso_Canela()),
                     ],
                   ),
-                )
+                ),
+                Container(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                  height: 300,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Cards("assets/images/cha_verdee.png", "chá verde", "2,00",
+                          ChaVerde()),
+                      // no 'LoginPAge ()' precisa colocar o hiperlink da página!!
+                      Cards("assets/images/cafee_e.png", "Café Expresso",
+                          "16,00", Cafe_expresso()),
+                      Cards("assets/images/incensoss.png",
+                          "Kit de Incenso Natural", "90,00", Incenso_Canela()),
+                    ],
+                  ),
+                ),
               ],
             ),
           )

@@ -19,7 +19,7 @@ class _GavetaState extends State<Gaveta> {
                 leading: Icon(Icons.home),
                 title: Text('Home'),
                 onTap: () {
-                  Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/home');
                 },
               ),
               ListTile(
