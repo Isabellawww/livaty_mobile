@@ -50,100 +50,124 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: Form(
         key: _formKey,
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 20.0,
-            ),
-            CircleAvatar(
-              radius: 35.0,
-              backgroundColor: Color.fromARGB(255, 131, 167, 131),
-              child: Icon(
-                Icons.person,
-                color: Colors.black,
-                size: 50.0,
-                semanticLabel: 'Text',
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 20.0,
               ),
-            ),
-            TextFormField(
-              controller: _emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Por favor, insira o Email';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              controller: _senhaController,
-              decoration: const InputDecoration(labelText: 'Senha'),
-              obscureText: true,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Por favor, insira a senha';
-                }
-                return null;
-              },
-            ),
-            TextButton(
-              child: Text('Não possuí uma conta ainda? Cadastre-se aqui!'),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CadastroPage(),
-                    ));
-              },
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  if (_usuarioRepository.validarUsuario(
-                      _emailController.text, _senhaController.text)) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
-                    );
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Icon(
-                            Icons.check_circle,
-                            color: Color.fromARGB(255, 106, 150, 108),
-                            size: 50,
-                          ),
-                          content: const Text('Usuário cadastrado com sucesso'),
-                          actions: <Widget>[
-                            TextButton(
-                              child: const Text('OK'),
-                              onPressed: () {
-                                Navigator.pop(context);
-                                Navigator.pushNamed(context, '/');
-                                //Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-                              },
-                            ),
-                          ],
-                        );
-                      },
-                    );
+              CircleAvatar(
+                radius: 35.0,
+                backgroundColor: Color.fromARGB(255, 131, 167, 131),
+                child: Icon(
+                  Icons.person,
+                  color: Colors.black,
+                  size: 50.0,
+                  semanticLabel: 'Text',
+                ),
+              ),
+              TextFormField(
+                controller: _emailController,
+                decoration: const InputDecoration(labelText: 'Email'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Por favor, insira o Email';
                   }
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
-
-                padding: EdgeInsets.symmetric(
-                    horizontal: 40, vertical: 20), // Ajuste o tamanho do botão
+                  return null;
+                },
               ),
-              child: const Text('Entrar'),
-            ),
-          ],
+              TextFormField(
+                controller: _senhaController,
+                decoration: const InputDecoration(labelText: 'Senha'),
+                obscureText: true,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Por favor, insira a senha';
+                  }
+                  return null;
+                },
+              ),
+              TextButton(
+                child: Text('Não possuí uma conta ainda? Cadastre-se aqui!'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CadastroPage(),
+                      ));
+                },
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                onPressed: () async{
+                  if (_formKey.currentState!.validate()) {
+                    if (_usuarioRepository.validarUsuario(
+                        _emailController.text, _senhaController.text)) {
+                          await showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Icon(
+                              Icons.check_circle,
+                              color: Color.fromARGB(255, 106, 150, 108),
+                              size: 50,
+                            ),
+                            content: const Text('Login realizado com sucesso'),
+                            actions: <Widget>[
+                              TextButton(
+                                child: const Text('OK'),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  Navigator.pushNamed(context, '/');
+                                  //Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomePage()),
+                      );
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Icon(
+                              Icons.error,
+                              color: Colors.red,
+                              size: 50,
+                            ),
+                            content: const Text('Erro ao realizar o login'),
+                            actions: <Widget>[
+                              TextButton(
+                                child: const Text('OK'),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  //Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+        
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 40, vertical: 20), // Ajuste o tamanho do botão
+                ),
+                child: const Text('Entrar'),
+              ),
+            ],
+          ),
         ),
       ),
     );

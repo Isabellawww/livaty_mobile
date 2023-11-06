@@ -16,7 +16,6 @@ class Incenso_Canela extends StatefulWidget {
 
 class _Incenso_CanelaState extends State<Incenso_Canela> {
   List<String> image = [
-    'assets/images/incensoss.png',
     'https://http2.mlstatic.com/D_NQ_NP_638518-MLB32731720646_112019-O.webp',
     'https://http2.mlstatic.com/D_NQ_NP_743725-MLU69846539079_062023-O.webp',
   ];
@@ -44,7 +43,7 @@ class _Incenso_CanelaState extends State<Incenso_Canela> {
                 ),
                 CarouselSlider(
                   options: CarouselOptions(height: 325.0, viewportFraction: 1),
-                  items: [0, 1, 2].map((i) {
+                  items: [0, 1].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
@@ -56,95 +55,58 @@ class _Incenso_CanelaState extends State<Incenso_Canela> {
                     );
                   }).toList(),
                 ),
-                Container(
-                  height: 100,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Preview("assets/images/incensos_categoria.png"),
-                      Preview(
-                          "https://http2.mlstatic.com/D_NQ_NP_638518-MLB32731720646_112019-O.webp"),
-                      Preview(
-                          "https://http2.mlstatic.com/D_NQ_NP_743725-MLU69846539079_062023-O.webp"),
-                    ],
+                
+                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                        child: RichText(
+                            text: TextSpan(children: [
+                      TextSpan(
+                          text: 'R\$', style: TextStyle(color: Colors.black)),
+                      TextSpan(
+                          text: '100',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Color.fromARGB(255, 106, 150, 108))),
+                      TextSpan(
+                          text: ',00', style: TextStyle(color: Colors.black)),
+                      TextSpan(text: ' ', style: TextStyle(color: Colors.black)),
+                      TextSpan(
+                          text: '120,00',
+                          style:
+                              TextStyle(decoration: TextDecoration.lineThrough)),
+                    ]))),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                          child: RichText(
-                              text: TextSpan(children: [
-                        TextSpan(text: 'R\$'),
-                        TextSpan(
-                            text: '100',
-                            style: TextStyle(
-                                fontSize: 30,
-                                color: Color.fromARGB(255, 106, 150, 108))),
-                        TextSpan(text: ',00'),
-                        TextSpan(text: ' '),
-                        TextSpan(
-                            text: '120,00',
-                            style: TextStyle(
-                                decoration: TextDecoration.lineThrough))
-                      ]))),
-                    ),
-                  ],
-                ),
+                ]),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      'Incenso de Canela',
+                      'Incenso de canela',
                       style: TextStyle(
                         fontSize: 16.0,
                       ),
                     ),
                   ),
                 ),
-
-                /*Container(
-                  height: 100,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Preview(
-                        "https://th.bing.com/th/id/OIP.Y7LmVSY4bitSAlggiiSDnQHaE8?pid=ImgDet&rs=1"),
-                      Preview(
-                        "https://simoesfilhoonline.com.br/wp-content/uploads/2019/11/ch%C3%A1-para-emagrecer-df.jpg"),
-                      Preview(
-                        "https://th.bing.com/th/id/OIP.HSTCJ4vgI1Fcbd-xpS__mgHaE8?pid=ImgDet&rs=1"),
-                    ],
-        ),
-        ),*/
-                Container(
-                  width: 1000,
-                  child: ElevatedButton(
-                    child: Icon(Icons.shopping_cart),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 106, 150, 108)),
-                    onPressed: () {
-                      Carrinho.adicionarProduto(
-                          MyProduto("Incenso de canela", 90));
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Icon(
-                                Icons.check_circle,
-                                color: Color.fromARGB(255, 106, 150, 108),
-                                size: 50,
-                              ),
-                              content: Text(
-                                  'Produto adicionado ao carrinho com sucesso'),
-                            );
-                          });
-                    },
-                  ),
+                Row(
+                  children: [
+                    Padding(padding: const EdgeInsets.only(left: 7.0)),
+                    Wrap(
+                      children: List.generate(
+                        5,
+                        (index) => Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 17.0,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+        
                 Container(
                   child: TextButton(
                     onPressed: () {
@@ -176,6 +138,32 @@ class _Incenso_CanelaState extends State<Incenso_Canela> {
                     child: Text('Descrição'),
                   ),
                 ),
+                Container(
+                  width: 1000,
+                  child: ElevatedButton(
+                    child: Icon(Icons.shopping_cart),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 106, 150, 108)),
+                    onPressed: () {
+                      Carrinho.adicionarProduto(
+                          MyProduto("Incenso de canela", 90));
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Icon(
+                                Icons.check_circle,
+                                color: Color.fromARGB(255, 106, 150, 108),
+                                size: 50,
+                              ),
+                              content: Text(
+                                  'Produto adicionado ao carrinho com sucesso'),
+                            );
+                          });
+                    },
+                  ),
+                ),
+                
               ],
             ),
           ),

@@ -38,7 +38,7 @@ class _Cafe_expressoState extends State<Cafe_expresso> {
               children: [
                 Center(
                   child: Text(
-                    "Chá Verde",
+                    "Café Expresso",
                     style: TextStyle(fontSize: 25, color: Colors.white),
                   ),
                 ),
@@ -56,71 +56,88 @@ class _Cafe_expressoState extends State<Cafe_expresso> {
                     );
                   }).toList(),
                 ),
-                Container(
-                  height: 100,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Preview(
-                          "https://th.bing.com/th/id/OIP.vpTGS7jp4KRTWKC2pfOCDwHaEK?pid=ImgDet&rs=1"),
-                      Preview(
-                          "https://th.bing.com/th/id/R.8d2c3e9d62c775ace67cbd714fdfff73?rik=ZM5tjIUfjb6ScA&pid=ImgRaw&r=0"),
-                      Preview(
-                          "https://th.bing.com/th/id/OIP.fT3HCRuhTqtKqgNMMFQxagHaGt?pid=ImgDet&w=540&h=489&rs=1"),
-                    ],
+                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                        child: RichText(
+                            text: TextSpan(children: [
+                      TextSpan(
+                          text: 'R\$', style: TextStyle(color: Colors.black)),
+                      TextSpan(
+                          text: '100',
+                          style: TextStyle(
+                              fontSize: 30,
+                              color: Color.fromARGB(255, 106, 150, 108))),
+                      TextSpan(
+                          text: ',00', style: TextStyle(color: Colors.black)),
+                      TextSpan(text: ' ', style: TextStyle(color: Colors.black)),
+                      TextSpan(
+                          text: '120,00',
+                          style:
+                              TextStyle(decoration: TextDecoration.lineThrough)),
+                    ]))),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                          child: RichText(
-                              text: TextSpan(children: [
-                        TextSpan(text: 'R\$'),
-                        TextSpan(
-                            text: '100',
-                            style: TextStyle(
-                                fontSize: 30,
-                                color: Color.fromARGB(255, 106, 150, 108))),
-                        TextSpan(text: ',00'),
-                        TextSpan(text: ' '),
-                        TextSpan(
-                            text: '120,00',
-                            style: TextStyle(
-                                decoration: TextDecoration.lineThrough))
-                      ]))),
-                    ),
-                  ],
-                ),
+                ]),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      'Café Expresso',
+                      'Chá verde',
                       style: TextStyle(
                         fontSize: 16.0,
                       ),
                     ),
                   ),
                 ),
-
-                /*Container(
-                  height: 100,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Preview(
-                        "https://th.bing.com/th/id/OIP.Y7LmVSY4bitSAlggiiSDnQHaE8?pid=ImgDet&rs=1"),
-                      Preview(
-                        "https://simoesfilhoonline.com.br/wp-content/uploads/2019/11/ch%C3%A1-para-emagrecer-df.jpg"),
-                      Preview(
-                        "https://th.bing.com/th/id/OIP.HSTCJ4vgI1Fcbd-xpS__mgHaE8?pid=ImgDet&rs=1"),
-                    ],
-        ),
-        ),*/
+                Row(
+                  children: [
+                    Padding(padding: const EdgeInsets.only(left: 7.0)),
+                    Wrap(
+                      children: List.generate(
+                        5,
+                        (index) => Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 17.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+        
+        Container(
+                        child: TextButton(
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Descrição'),
+                                    content: Column(
+                                      children: [
+                                        Expanded(
+                                          child: Text('Descrição'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text(
+                                            'Fechar',
+                                            style: TextStyle(
+                                                color: Colors.teal.shade900),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                });
+                          },
+                          child: Text('Descrição'),
+                        ),
+                      ),
                 Container(
                   width: 1000,
                   child: ElevatedButton(
@@ -142,40 +159,12 @@ class _Cafe_expressoState extends State<Cafe_expresso> {
                                   'Produto adicionado ao carrinho com sucesso'),
                             );
                           });
+                      
                     },
                   ),
+                  
                 ),
-                Container(
-                  child: TextButton(
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Text('Descrição'),
-                              content: Column(
-                                children: [
-                                  Expanded(
-                                    child: Text('Descriaaaaaaa'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text(
-                                      'Fechar',
-                                      style: TextStyle(
-                                          color: Colors.teal.shade900),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          });
-                    },
-                    child: Text('Descrição'),
-                  ),
-                ),
+                
               ],
             ),
           ),
