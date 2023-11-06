@@ -112,6 +112,14 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
+          ),
+          Container(
+            decoration: const BoxDecoration(color: Colors.amber //cor aqui
+                ),
+            width: MediaQuery.sizeOf(context).width,
+            child: Column(
+              children: [Text('Alooooooo')],
+            ),
           )
         ],
       )),

@@ -144,7 +144,38 @@ class _Cafe_expressoState extends State<Cafe_expresso> {
                           });
                     },
                   ),
-                )
+                ),
+                Container(
+                  child: TextButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('Descrição'),
+                              content: Column(
+                                children: [
+                                  Expanded(
+                                    child: Text('Descriaaaaaaa'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text(
+                                      'Fechar',
+                                      style: TextStyle(
+                                          color: Colors.teal.shade900),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          });
+                    },
+                    child: Text('Descrição'),
+                  ),
+                ),
               ],
             ),
           ),

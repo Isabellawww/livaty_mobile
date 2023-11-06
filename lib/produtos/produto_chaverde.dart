@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, sort_child_properties_last
 import 'package:flutter_application_livaty/LivaTy/carrinhorepository.dart';
 import 'package:flutter_application_livaty/LivaTy/produto.dart';
 import 'package:flutter_application_livaty/appbar.dart';
@@ -64,14 +64,15 @@ class _ChaVerdeState extends State<ChaVerde> {
                   child: Container(
                       child: RichText(
                           text: TextSpan(children: [
-                    TextSpan(text: 'R\$',
-                    style: TextStyle(color: Colors.black)),
+                    TextSpan(
+                        text: 'R\$', style: TextStyle(color: Colors.black)),
                     TextSpan(
                         text: '100',
                         style: TextStyle(
                             fontSize: 30,
                             color: Color.fromARGB(255, 106, 150, 108))),
-                    TextSpan(text: ',00', style: TextStyle(color: Colors.black)),
+                    TextSpan(
+                        text: ',00', style: TextStyle(color: Colors.black)),
                     TextSpan(text: ' ', style: TextStyle(color: Colors.black)),
                     TextSpan(
                         text: '120,00',
@@ -92,6 +93,21 @@ class _ChaVerdeState extends State<ChaVerde> {
                   ),
                 ),
               ),
+              Row(
+                children: [
+                  Padding(padding: const EdgeInsets.only(left: 7.0)),
+                  Wrap(
+                    children: List.generate(
+                      5,
+                      (index) => Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 17.0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
 
               /*Container(
                   height: 100,
@@ -107,6 +123,40 @@ class _ChaVerdeState extends State<ChaVerde> {
                     ],
         ),
         ),*/
+              SizedBox(
+                height: 30.0,
+              ),
+              Container(
+                child: TextButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Descrição'),
+                            content: Column(
+                              children: [
+                                Expanded(
+                                  child: Text('Descriaaaaaaa'),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text(
+                                    'Fechar',
+                                    style:
+                                        TextStyle(color: Colors.teal.shade900),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        });
+                  },
+                  child: Text('Descrição'),
+                ),
+              ),
               SizedBox(
                 height: 30.0,
               ),
@@ -132,6 +182,14 @@ class _ChaVerdeState extends State<ChaVerde> {
                           );
                         });
                   },
+                ),
+              ),
+              Container(
+                decoration: const BoxDecoration(color: Colors.amber //cor aqui
+                    ),
+                width: MediaQuery.sizeOf(context).width,
+                child: Column(
+                  children: [Text('Alooooooo')],
                 ),
               )
             ],
