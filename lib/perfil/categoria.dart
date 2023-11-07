@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 
 class CategoriaHome extends StatelessWidget {
-  CategoriaHome(this.image, this.nome, this.estilo, {Key? key})
+  CategoriaHome(this.image, this.nome, this.estilo, this.rota, {Key? key})
       : super(key: key);
 
   final String image;
   final String nome;
   final String estilo;
+  final Widget rota;
 
   @override
   Widget build(BuildContext context) {
-    double circleAvatarSize = 55;
-
-    
+    double circleAvatarSize = 60;
 
     return GestureDetector(
       onTap: () {
         // Navegue para a rota desejada aqui.
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => SuaRota()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => rota));
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 3),
