@@ -1,24 +1,21 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import
-
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_livaty/LivaTy/carrinhorepository.dart';
 import 'package:flutter_application_livaty/LivaTy/produto.dart';
 import 'package:flutter_application_livaty/appbar.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_application_livaty/produtos/preview.dart';
 
-class Cafe_expresso extends StatefulWidget {
-  const Cafe_expresso({super.key});
+class Cha_mate extends StatefulWidget {
+  const Cha_mate({super.key});
 
   @override
-  State<Cafe_expresso> createState() => _Cafe_expressoState();
+  State<Cha_mate> createState() => _Cha_mateState();
 }
 
-class _Cafe_expressoState extends State<Cafe_expresso> {
+class _Cha_mateState extends State<Cha_mate> {
   List<String> image = [
-    'https://th.bing.com/th/id/OIP.vpTGS7jp4KRTWKC2pfOCDwHaEK?pid=ImgDet&rs=1',
-    'https://th.bing.com/th/id/R.8d2c3e9d62c775ace67cbd714fdfff73?rik=ZM5tjIUfjb6ScA&pid=ImgRaw&r=0',
-    'https://th.bing.com/th/id/OIP.fT3HCRuhTqtKqgNMMFQxagHaGt?pid=ImgDet&w=540&h=489&rs=1',
+    'https://th.bing.com/th/id/OIP.Y7LmVSY4bitSAlggiiSDnQHaE8?pid=ImgDet&rs=1',
+    'https://simoesfilhoonline.com.br/wp-content/uploads/2019/11/ch%C3%A1-para-emagrecer-df.jpg',
+    'https://th.bing.com/th/id/OIP.HSTCJ4vgI1Fcbd-xpS__mgHaE8?pid=ImgDet&rs=1',
   ];
   @override
   Widget build(BuildContext context) {

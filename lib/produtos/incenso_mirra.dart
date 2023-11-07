@@ -1,25 +1,15 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_livaty/LivaTy/carrinhorepository.dart';
 import 'package:flutter_application_livaty/LivaTy/produto.dart';
-import 'package:flutter_application_livaty/appbar.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_application_livaty/produtos/preview.dart';
 
-class Cafe_expresso extends StatefulWidget {
-  const Cafe_expresso({super.key});
+class Incenso_mirra extends StatefulWidget {
+  const Incenso_mirra({super.key});
 
   @override
-  State<Cafe_expresso> createState() => _Cafe_expressoState();
+  State<Incenso_mirra> createState() => _Incenso_mirraState();
 }
 
-class _Cafe_expressoState extends State<Cafe_expresso> {
-  List<String> image = [
-    'https://th.bing.com/th/id/OIP.vpTGS7jp4KRTWKC2pfOCDwHaEK?pid=ImgDet&rs=1',
-    'https://th.bing.com/th/id/R.8d2c3e9d62c775ace67cbd714fdfff73?rik=ZM5tjIUfjb6ScA&pid=ImgRaw&r=0',
-    'https://th.bing.com/th/id/OIP.fT3HCRuhTqtKqgNMMFQxagHaGt?pid=ImgDet&w=540&h=489&rs=1',
-  ];
+class _Incenso_mirraState extends State<Incenso_mirra> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
