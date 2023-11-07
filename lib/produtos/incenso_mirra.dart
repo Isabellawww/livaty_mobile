@@ -1,6 +1,9 @@
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_livaty/LivaTy/carrinhorepository.dart';
 import 'package:flutter_application_livaty/LivaTy/produto.dart';
+import 'package:flutter_application_livaty/appbar.dart';
 
 class Incenso_mirra extends StatefulWidget {
   const Incenso_mirra({super.key});
@@ -10,6 +13,11 @@ class Incenso_mirra extends StatefulWidget {
 }
 
 class _Incenso_mirraState extends State<Incenso_mirra> {
+  List<String> image = [
+    'https://th.bing.com/th/id/OIP.Y7LmVSY4bitSAlggiiSDnQHaE8?pid=ImgDet&rs=1',
+    'https://simoesfilhoonline.com.br/wp-content/uploads/2019/11/ch%C3%A1-para-emagrecer-df.jpg',
+    'https://th.bing.com/th/id/OIP.HSTCJ4vgI1Fcbd-xpS__mgHaE8?pid=ImgDet&rs=1',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
