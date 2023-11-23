@@ -1,12 +1,15 @@
-# livaty_mobile
+# Clonar repositório Parte Mobile
 
-A new Flutter project.
+## Passo a Passo
 
-## Getting Started
+Para acessar, efetivamente, os códigos Mobile, faz-se necessário a instalação do flutter(```https://docs.flutter.dev/get-started/install```) e de extensões dentro do editor Visual Studio Code, indicadas por uma figura de “bloquinhos”, que ao o cursos acima, indica: “extensões”. 
+As extensões necessárias são: Dart e Flutter.
+E, se suportado pelas configurações do computador utilizado para tal, pode-se utilizar ferramentas mais eficientes com a instalação do Android Studio e programas que simulam celulares, como BlueStacks, encontrados oficialmente facilmente em sites online.
+Se não for o caso, para executar o projeto Mobile, com o projeto descompactado e devidamente localizado no computador, basta abri-lo no programa de edição de código (Aba “Arquivo” -> “Abrir Pasta” -> (Pasta em que se localiza projeto mobile))
+Na pasta lib, dentro da pasta do projeto, deve-se estar aberto o arquivo “main.dart” para executar o projeto, clicando no botão superior direito, em uma setinha que indica a execução sem debug do código. 
 
-This project is a starting point for a Flutter application.
+De tal maneira, é possível executar o projeto mobile e alterar seus código, manuseá-los, e, se for o caso, corrigi-los.
 
-A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
