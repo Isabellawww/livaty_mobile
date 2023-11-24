@@ -4,7 +4,8 @@
 Seguem-se as instruções para manuseamento e manutenção do projeto LivaTy:
 
 Foram utilizadas as seguintes linguagens:
-* #### WEB (Site online): HTML, PHP, CSS, JAVASCRIPT 
+* #### WEB (Site online): HTML, PHP, CSS, JAVASCRIPT  
+
 * #### MOBILE (Dispositivos Móveis): FLUTTER
 
 * Para clonagem do projeto, é conveniente a utilização da função de “fork”,  localizada na página do repositório na aba CODE da plataforma github - plataforma que armazena projetos de programação, códigos e etc. - , do qual pode-se copiar os arquivos para utilizá-los à sua forma.
@@ -17,6 +18,7 @@ Para criação e utilização do banco de dados, foi utilizado o MySQL, mais esp
 De tal maneira, é possível alterar os códigos do projeto, manuseá-los, e, se for o caso, corrigi-los.
 * Possuindo todas essas ferramentas, para acessar o próprio site online, basta utilizar o XAMPP e usar o link "localhost/", após a barra, seria colocado o link dentro da pasta o qual o arquivo se encontra, que seria "xampp/htdocs/...", onde se encontram as reticências seriam as pastas colocadas como link após a barra em localhost.
 * Há também outras formas de se acessar sites com servidores WEB prontos e outros locais. 
+* #### Repositório WEB: https://github.com/n4rin/tcc.git
 * OBS: Para alterações que envolvam o banco de dados no MySQL, abra o arquivo conexaoBD.php na pasta Login em algum editor de código para atualizar de acordo com as informações de seu próprio banco de dados.
 
 ## MOBILE
