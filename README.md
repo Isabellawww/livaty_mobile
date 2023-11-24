@@ -18,8 +18,10 @@ Para criação e utilização do banco de dados, foi utilizado o MySQL, mais esp
 De tal maneira, é possível alterar os códigos do projeto, manuseá-los, e, se for o caso, corrigi-los.
 * Possuindo todas essas ferramentas, para acessar o próprio site online, basta utilizar o XAMPP e usar o link "localhost/", após a barra, seria colocado o link dentro da pasta o qual o arquivo se encontra, que seria "xampp/htdocs/...", onde se encontram as reticências seriam as pastas colocadas como link após a barra em localhost.
 * Há também outras formas de se acessar sites com servidores WEB prontos e outros locais. 
-* #### Repositório WEB: https://github.com/n4rin/tcc.git
+
 * OBS: Para alterações que envolvam o banco de dados no MySQL, abra o arquivo conexaoBD.php na pasta Login em algum editor de código para atualizar de acordo com as informações de seu próprio banco de dados.
+
+* #### Repositório WEB: https://github.com/n4rin/tcc.git
 
 ## MOBILE
 * Para acessar, efetivamente, os códigos Mobile, faz-se necessário a instalação do flutter(```https://docs.flutter.dev/get-started/install```) e de extensões dentro do editor Visual Studio Code, indicadas por uma figura de “bloquinhos”, que ao o cursos acima, indica: “extensões”. 
